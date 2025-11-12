@@ -1,0 +1,23 @@
+int[] array = new int[16];
+int count = 0;
+
+for (int i = 0; i < array.Length; i++)
+{
+    Console.Write($"Введите элемент {i + 1}: ");
+    array[i] = int.Parse(Console.ReadLine());
+}
+
+for (int i = 0; i < array.Length; i++)
+{
+    if (array[i] % 3 == 0 && array[i] != 0)
+    {
+        array[i] = 0;
+        count++;
+    }
+}
+
+Console.WriteLine("Массив после замены:");
+foreach (var item in array)
+    Console.Write(item + " ");
+
+Console.WriteLine($"Количество замен: {count}");
